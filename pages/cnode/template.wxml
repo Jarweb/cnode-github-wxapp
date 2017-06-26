@@ -1,0 +1,22 @@
+<template name="cnode">
+	<view 
+		class="cnode-item"
+		id="{{item.id}}"
+		bindtap="toDetail">
+		<image 
+			class="cnode-item-avatar" 
+			mode="cover"	
+			src="{{item.author.avatar_url}}"></image>
+		<view class="cnode-item-desc">
+			<text class="title">{{item.title}}</text>
+    		<text class="reply-visit">{{item.reply_count}}/{{item.visit_count}}</text>
+    		<text class="tag" wx:if="{{item.tab === 'share'}}">分享</text>
+    		<text class="tag" wx:if="{{item.tab === 'ask'}}">问答</text>
+    		<text class="tag" wx:if="{{item.tab === 'good'}}">精华</text>
+    		<text class="tag" wx:if="{{item.tab === 'job'}}">招聘</text>
+    		<text class="top" wx:if="{{item.top === true}}">顶</text>
+			<text class="good" wx:if="{{item.good === true}}">精</text>
+			<text class="timeAt">{{item.last_reply_at}}</text>
+		</view>	
+	</view>
+</template>

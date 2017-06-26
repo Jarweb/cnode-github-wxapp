@@ -1,0 +1,51 @@
+.cnode-item{
+	overflow: hidden;
+	padding: 20rpx 20rpx 20rpx 20rpx;
+	border-bottom: 1rpx solid #f6f6f6;
+}
+.cnode-item-avatar{
+	float: left;
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 100%;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.cnode-item-desc{
+	overflow: hidden;
+	padding-left: 20rpx;
+}
+.title{
+	display: block;
+	font-size: 15px;
+	color: #404040;
+	padding-bottom: 12rpx;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1;
+}
+.reply-visit{
+	font-size: 12px;
+	color: #828282;
+}
+.top{
+	padding-left: 12rpx;
+	font-size: 12px;
+	color: #ed7a5d;
+}
+.good{
+	padding-left: 12rpx;
+	font-size: 12px;
+	color: green;
+}
+.tag{
+	padding-left: 20rpx;
+	font-size: 12px;
+	color: #828282;
+}
+.timeAt{
+	float: right;
+	font-size: 12px;
+	color: #828282;
+}

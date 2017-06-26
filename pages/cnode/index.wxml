@@ -1,0 +1,43 @@
+<import src="template.wxml" />
+
+<view class="page">	
+	
+	<view style="height: {{windowHeight}}px; width: {{windowWidth}}px;">
+		<scroll-view 
+			class="container"
+			style="height: {{windowHeight}}px; width: {{windowWidth}}px;"
+			class="github-wrap"
+			scroll-y="{{true}}"
+			lower-threshold="100"
+			bindscrolltolower="lower">
+			<block
+				wx:for="{{cnode}}" 
+				wx:key="*this" 
+				wx:for-item="item">
+				<template is="cnode" data="{{item: item}}" />
+			</block>
+		</scroll-view>
+	</view>
+
+	<view 
+		bindtap="stageHandle"
+		class="btn-stage">{{isActiveTab}}</view>
+	
+	<view 
+		class="stage-pop-wrap {{popShow ? 'show' : ''}}">
+		<block 
+			wx:for="{{tab}}"
+			wx:key="*this" 
+			wx:for-item="item">
+			<view 
+				class="{{isActive === item.id ? 'tab-item tab-item-active' : 'tab-item'}}"
+				id="{{item.id}}"
+				bindtap="tabHandler">{{item.text}}</view>
+		</block>
+	</view>
+
+	<view 
+		bindtap="maskHandle"
+		class="stage-mask {{popShow ? 'show' : ''}}">
+	</view>
+</view>

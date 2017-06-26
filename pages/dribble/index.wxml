@@ -1,0 +1,41 @@
+<view class="page">
+	<view class="dribble-wrap">
+		<block 
+			wx:key="*this" 
+			wx:for-item="item"
+			wx:for="{{dribbble}}">
+			<view class="dribble-wrap">
+				<image 
+					bindtap="toPreview"
+					id="{{item.images.hidpi}}"
+					class="dribbble-wrap-img" 
+					src="{{item.images.hidpi}}" 
+					mode="widthFix">
+				</image>
+			</view>
+		</block>
+	</view>
+
+
+	<view 
+		bindtap="stageHandle"
+		class="btn-stage">{{isActive}}</view>
+	
+	<view 
+		class="stage-pop-wrap {{popShow ? 'show' : ''}}">
+		<block 
+			wx:for="{{tab}}"
+			wx:key="*this" 
+			wx:for-item="item">
+			<view 
+				class="{{isActive === item.id ? 'tab-item tab-item-active' : 'tab-item'}}"
+				id="{{item.id}}"
+				bindtap="tabHandler">{{item.text}}</view>
+		</block>
+	</view>
+
+	<view 
+		bindtap="maskHandle"
+		class="stage-mask {{popShow ? 'show' : ''}}">
+	</view>
+</view>

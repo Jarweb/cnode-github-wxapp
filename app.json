@@ -1,0 +1,39 @@
+{
+	"pages": [
+		"pages/github/index",
+		"pages/cnode/index",
+		"pages/cnodeDetail/index",
+		"pages/dribble/index"
+	],
+	"window": {
+		"backgroundTextStyle":"light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "Jar",
+		"navigationBarTextStyle":"black",
+		"backgroundColor": "#F2f2f2",
+		"enablePullDownRefresh":"false"
+	},
+	"tabBar": {
+		"color": "#888",
+		"selectedColor": "#89bdf7",
+		"backgroundColor": "#fff",
+		"borderStyle": "white",
+		"list": [
+			{
+			  "pagePath": "pages/github/index",
+			  "iconPath": "image/principle-black.png",
+			  "selectedIconPath": "image/principle-color.png"
+			},{
+			  "pagePath": "pages/cnode/index",
+			  "iconPath": "image/drive-black.png",
+			  "selectedIconPath": "image/drive-color.png"
+			},{
+			  "pagePath": "pages/dribble/index",
+			  "iconPath": "image/dribbble-black.png",
+			  "selectedIconPath": "image/dribbble-color.png"
+			}
+		]
+	},
+	"debug": true
+}
+

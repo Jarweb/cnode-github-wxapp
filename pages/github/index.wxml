@@ -1,0 +1,50 @@
+<import src="template.wxml" />
+
+<view>
+	<block
+		wx:for="{{github}}" 
+		wx:key="*this" 
+		wx:for-item="item">
+		<template is="github" data="{{item: item}}" />
+	</block>
+	
+
+	<view 
+		bindtap="stageHandle"
+		class="btn-stage">{{isActive}}</view>
+	
+	<view 
+		style="height: 150px;"
+		class="stage-pop-wrap {{popShow ? 'show' : ''}}">
+		<block 
+			wx:for="{{tab}}"
+			wx:key="*this" 
+			wx:for-item="item">
+			<view 
+				class="{{isActive === item.id ? 'tab-item tab-item-active' : 'tab-item'}}"
+				id="{{item.id}}"
+				bindtap="tabHandler">{{item.text}}</view>
+		</block>
+		<block
+			wx:for="{{diy}}"
+			wx:key="*htis"
+			wx:for-item="item">
+			<view 
+				class="{{isActive === item ? 'tab-item tab-item-active' : 'tab-item'}}"
+				id="{{item}}"
+				bindtap="tabHandler">{{item}}</view>
+		</block>
+		<view class="input-wrap">
+			<input 
+				bindconfirm="searchHandle"
+				placeholder="add tag here, happy hacking"
+				text="text" />
+		</view>
+	</view>
+
+	<view 
+		bindtap="maskHandle"
+		class="stage-mask {{popShow ? 'show' : ''}}">
+	</view>
+	
+</view>

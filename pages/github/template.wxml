@@ -1,0 +1,20 @@
+<template name="github">
+	<view 
+		class="github-item"
+		id="{{item.html_url}}"
+		bindtap="togithubDetail">
+		<image class="github-item-avatar" src="{{item.owner.avatar_url}}"></image>
+		<view class="github-item-desc">
+			<text class="github-item-title">{{item.full_name}}</text>
+			<text class="github-item-content">{{item.description}}</text>
+			<text 
+				hidden="{{!item.homepage}}"
+				class="github-item-content">{{item.homepage}}</text>
+			<view>
+	    		<text 
+	    		class="github-item-node">{{item.language || isActive}}</text>
+				<text class="github-item-timeAt">star: {{item.stargazers_count}}</text>
+			</view>
+		</view>	
+	</view>
+</template>
